@@ -10,22 +10,21 @@ spec:
   selector: 
     app: myapp
   ports:
-    - name:
+    - name: http
       protocol: TCP
       port: 80
       targetPort: 80
 ---
 apiVersion: v1
-kind: service
+kind: Service
 metadata:
   name: pod2-app-svc
 spec:
   type: LoadBalancer
   selector: 
-    name: pod2-app
-    app: pos2-app
-    ports:
+    app: pod2-app
+  ports:
     - name: httpd
-     protocol: TCP
-     port: 80
-     targetPort: 80
+      protocol: TCP
+      port: 80
+      targetPort: 80
