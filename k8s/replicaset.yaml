@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: ReplicationController
+metadata: 
+  name: my-rc
+  labels:
+    app: my-replica
+spec:
+  replicas: 3
+  selector:
+    matchLabels: 
+      app: my-app-2
+    matchExperssions:
+      - {key: app,operator: In, values: [my-app2]}  
+  template:
+    metadata:
+      name: my-pod2
+      labels:
+        app: my-app-2
+        env: devops
+    spec:
+      containers:
+        - name: nginx
+          image: nginx     
+          ports:
+          - name: http
+            containerPort: 80
+
