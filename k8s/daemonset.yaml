@@ -11,8 +11,8 @@ spec:
       app: nginx
   template: 
     matadata:
-       labels:
-          app: nginx
+      labels:
+        app: nginx
     spec:
       containers:
       - name: nginx
