@@ -1,0 +1,19 @@
+version: "3"
+services:
+  
+  websesrver:
+      image: surajbele/batch-11:alpine-apache2
+      volumes:
+        - /opt/data/
+      ports:
+        - 80:80
+  tomcatserver:
+      image: surajbele/batch-11:tomcat_server
+      ports:
+        - 8080:8080
+  DBserver:
+      image: mariadb
+      ports:
+        - 3306:3306
+      environment:
+	      - MYSQL_ROOT_PASSWORD=admin123
