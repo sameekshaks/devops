@@ -1,32 +1,31 @@
+variable "region" {
+  default = "ap-south-1"
+}
+variable "project" {
+  default = "pluto"
+}
 variable "vpc_cidr" {
-    default = "10.0.0.0/20"
+  default = "10.0.0.0/16"
 }
-variable "vpcname" {
-  default = "myvpc"
+variable "private_cidr" {
+  default = "10.0.0.0/24"
 }
-variable "project_name" {
-  default = "pulto"
-}
-variable "pub_cidr" {
+variable "public_cidr" {
   default = "10.0.1.0/24"
 }
-variable "pvt_cidr" {
-  default = "10.0.2.0/24"
+variable "environment" {
+  default = "devops"
 }
-
-variable "ami" {
-  default = "ami-0f88e80871fd81e91"
+variable "image_id" {
+  default = "ami-0de716d6197524dd9"
 }
-variable "instance_type" {
-    default = "t2.micro"
-}
-variable "key_name" {
+variable "key_pair" {
   default = "id_rsa"
 }
-variable "sg" {
-  default = ["sg-0d34c3d2b6fa6492a"]
+variable "instance_type" {
+  default = "t2.micro"
 }
 
-variable "region" {
-  default = "us-east-1"
+variable "image_id2" {
+  default = "ami-020cba7c55df1f615"
 }
